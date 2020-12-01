@@ -1,0 +1,23 @@
+{
+  "faixas": [
+    {
+      "valorInicial": 0,
+      "valorFinal": 1903.98,
+      "aliquota": 0
+    },
+    {
+      "valorInicial": 1903.99,
+      "valorFinal": 2826.65,
+      "aliquota": 7.5
+    },
+    {
+      "valorInicial": 2826.66,
+      "valorFinal": 3751.05,
+      "aliquota": 15
+    },
+    {
+      "valorInicial": 3751.06,
+      "aliquota": 27.5
+    }
+  ]
+}

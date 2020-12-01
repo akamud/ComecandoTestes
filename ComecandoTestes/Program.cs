@@ -1,39 +1,47 @@
-﻿using System;
+﻿using ComecandoTestes.ImpostoRenda;
+using System;
+using System.Threading.Tasks;
 
 namespace ComecandoTestes
 {
     class Program
     {
-        static void Main(string[] args)
+        private static Calculadora calculadora;
+        
+        static async Task Main(string[] args)
         {
+            calculadora = new Calculadora();
+            
             Executar();
             // ConferirResultadosPrimeiraIteracao();
             // ConferirResultadosSegundaIteracao();
+
+            // await ExecutarCalculoSalario();
         }
 
         private static void Executar()
         {
             Console.WriteLine("Digite o primeiro número:");
-            var numero1 = int.Parse(Console.ReadLine());
+            var numero1 = decimal.Parse(Console.ReadLine());
             Console.WriteLine("Digite o segundo número:");
-            var numero2 = int.Parse(Console.ReadLine());
+            var numero2 = decimal.Parse(Console.ReadLine());
             Console.WriteLine("Digite a operação");
             var operacao = Console.ReadLine();
 
-            int resultado = 0;
+            var resultado = 0m;
             switch (operacao)
             {
                 case "+":
-                    resultado = Calculadora.Somar(numero1, numero2);
+                    resultado = calculadora.Somar(numero1, numero2);
                     break;
                 case "-":
-                    resultado = Calculadora.Subtrair(numero1, numero2);
+                    resultado = calculadora.Subtrair(numero1, numero2);
                     break;
                 case "/":
-                    resultado = Calculadora.Dividir(numero1, numero2);
+                    resultado = calculadora.Dividir(numero1, numero2);
                     break;
                 case "*":
-                    resultado = Calculadora.Multiplicar(numero1, numero2);
+                    resultado = calculadora.Multiplicar(numero1, numero2);
                     break;
             }
             
@@ -42,32 +50,40 @@ namespace ComecandoTestes
 
         private static void ConferirResultadosPrimeiraIteracao()
         {
-            var resultadoSoma = Calculadora.Somar(20, 30);
+            var resultadoSoma = calculadora.Somar(20, 30);
             Console.WriteLine($"Somar 20 + 30 = {resultadoSoma}");
             
-            var resultadoSubtracao = Calculadora.Subtrair(30, 10);
-            Console.WriteLine($"Somar 30 - 10 = {resultadoSubtracao}");
+            var resultadoSubtracao = calculadora.Subtrair(30, 10);
+            Console.WriteLine($"Subtrair 30 - 10 = {resultadoSubtracao}");
             
-            var resultadoMultiplicacao = Calculadora.Multiplicar(20, 3);
-            Console.WriteLine($"Somar 20 * 3 = {resultadoMultiplicacao}");
+            var resultadoMultiplicacao = calculadora.Multiplicar(20, 3);
+            Console.WriteLine($"Multiplicar 20 * 3 = {resultadoMultiplicacao}");
             
-            var resultadoDivisao = Calculadora.Dividir(40, 4);
-            Console.WriteLine($"Somar 40 / 4 = {resultadoDivisao}");
+            var resultadoDivisao = calculadora.Dividir(40, 4);
+            Console.WriteLine($"Dividir 40 / 4 = {resultadoDivisao}");
         }
         
         private static void ConferirResultadosSegundaIteracao()
         {
-            var resultadoSoma = Calculadora.Somar(20, 30);
+            var resultadoSoma = calculadora.Somar(20, 30);
             Console.WriteLine($"Somar 20 + 30 deveria ser 50. {resultadoSoma == 50}");
             
-            var resultadoSubtracao = Calculadora.Subtrair(30, 10);
+            var resultadoSubtracao = calculadora.Subtrair(30, 10);
             Console.WriteLine($"Subtrair 30 - 10 deveria ser 20. {resultadoSubtracao == 20}");
             
-            var resultadoMultiplicacao = Calculadora.Multiplicar(20, 3);
+            var resultadoMultiplicacao = calculadora.Multiplicar(20, 3);
             Console.WriteLine($"Multiplicar 20 * 3 deveria ser 60. {resultadoMultiplicacao == 60}");
             
-            var resultadoDivisao = Calculadora.Dividir(40, 4);
+            var resultadoDivisao = calculadora.Dividir(40, 4);
             Console.WriteLine($"Dividir 40 / 4 deveria ser 10. {resultadoDivisao == 10}");
+        }
+
+        private static async Task ExecutarCalculoSalario()
+        {
+            Console.WriteLine("Digite o salário:");
+            var salario = decimal.Parse(Console.ReadLine());
+            var resultadoSalario = await (new CalculadoraImposto(new ServicoImpostoRenda()).CalcularSalarioLiquido(salario));
+            Console.WriteLine($"Salário Líquido: {resultadoSalario}");
         }
     }
 }

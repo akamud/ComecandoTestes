@@ -1,6 +1,6 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=bdd0d2cf_002Dfd34_002D4e35_002D8dad_002D992c30fb759d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Tests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
-    &lt;TestId&gt;NUnit3x::C6EF943C-CCA3-410C-B903-56DC5C2F7E3A::.NETCoreApp,Version=v3.1::TestProject1.Tests&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::C6EF943C-CCA3-410C-B903-56DC5C2F7E3A::.NETCoreApp,Version=v3.1::ComecandoTestes.Testes.CalculadoraImpostoTestes.CalcularSalarioLiquidoDeveDescontarAliquotaDoSalarioPassado&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

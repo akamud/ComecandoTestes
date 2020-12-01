@@ -1,13 +1,13 @@
 namespace ComecandoTestes
 {
-    public static class Calculadora
+    public class Calculadora
     {
-        public static int Somar(int numero1, int numero2) => numero1 + numero2;
+        public decimal Somar(decimal numero1, decimal numero2) => numero1 + numero2;
 
-        public static int Subtrair(int numero1, int numero2) => numero1 - numero2;
+        public decimal Subtrair(decimal numero1, decimal numero2) => numero1 - numero2;
 
-        public static int Multiplicar(int numero1, int numero2) => numero1 + numero2;
+        public decimal Multiplicar(decimal numero1, decimal numero2) => numero1 + numero2;
 
-        public static int Dividir(int numero1, int numero2) => numero1 / numero2;
+        public decimal Dividir(decimal numero1, decimal numero2) => numero1 / numero2;
     }
 }
