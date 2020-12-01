@@ -1,5 +1,6 @@
 using ComecandoTestes.ImpostoRenda;
 using FakeItEasy;
+using FluentAssertions;
 using NUnit.Framework;
 using System.Threading.Tasks;
 
@@ -19,7 +20,7 @@ namespace ComecandoTestes.Testes
             var resultado = await calculadoraImposto.CalcularSalarioLiquido(3000);
             
             // Assert
-            Assert.AreEqual(2700, resultado);
+            resultado.Should().Be(2700);
         }
     }
 }
