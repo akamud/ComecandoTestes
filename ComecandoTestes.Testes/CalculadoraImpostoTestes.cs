@@ -17,7 +17,7 @@ namespace ComecandoTestes.Testes
             var resultado = await calculadoraImposto.CalcularSalarioLiquido(3000);
             
             // Assert
-            Assert.AreEqual(2550, 3000);
+            Assert.AreEqual(2550, resultado);
         }
     }
 }
