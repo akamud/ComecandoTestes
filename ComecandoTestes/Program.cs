@@ -12,11 +12,11 @@ namespace ComecandoTestes
         {
             calculadora = new Calculadora();
             
-            Executar();
+            // Executar();
             // ConferirResultadosPrimeiraIteracao();
             // ConferirResultadosSegundaIteracao();
 
-            // await ExecutarCalculoSalario();
+            await ExecutarCalculoSalario();
         }
 
         private static void Executar()
@@ -82,7 +82,7 @@ namespace ComecandoTestes
         {
             Console.WriteLine("Digite o salário:");
             var salario = decimal.Parse(Console.ReadLine());
-            var resultadoSalario = await (new CalculadoraImposto(new ServicoImpostoRenda()).CalcularSalarioLiquido(salario));
+            var resultadoSalario = await (new CalculadoraImposto().CalcularSalarioLiquido(salario));
             Console.WriteLine($"Salário Líquido: {resultadoSalario}");
         }
     }
